@@ -1,0 +1,347 @@
+@import "clock";
+@import "animate.css";
+@import "background_particles";
+
+$primary-color-yellow: #DBD756;
+$primary-color-blue: #6D9ADE;
+
+html
+{
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle, #24246e, #06051f);
+  //isolation: isolate;
+  width: 100vw;
+  height: 100vh;
+
+
+  .background__particles {
+    &:active {
+      span,
+      span::before,
+      span::after {
+        // Commented out for performance
+        //mix-blend-mode: color-dodge;
+        padding: 40px;
+      }
+    }
+  }
+}
+
+.show
+{
+  transition-duration: 300ms;
+  background: #24246e;
+}
+
+.btn-primary{
+  background: #24246e;
+  outline: none;
+  border-color:#24246e;
+  box-shadow: 1px 1px 15px $primary-color-blue;
+
+  &:hover{
+    background: $primary-color-yellow;
+    color: #241379;
+    border-color:#24246e;
+  }
+}
+
+#smooth-scrolling{
+  height:100vh;
+  position: relative;
+  overflow-y:scroll;
+}
+
+.color-yellow{
+  color:$primary-color-yellow;
+}
+
+.color-blue{
+  color:$primary-color-blue;
+}
+
+.background-yellow
+{
+  background-color: $primary-color-yellow;
+}
+
+.background-blue{
+  background-color: $primary-color-blue;
+}
+
+.navbar{
+  height:150px;
+  font-size:1.5rem;
+}
+
+.navbar-brand{
+  font-size:1.5rem;
+}
+
+.nav-link
+{
+  margin: 0 1rem;
+}
+
+.img-fluid{
+  width:50px;
+  padding-bottom:1rem;
+}
+
+.section__meetup-welcome{
+  .row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.section__about-us{
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  .section__about-us-box--image
+  {
+    background-image: url("./assets/images/php_team_valueadd.jpeg");
+    height:100%;
+    padding:0 3rem 3rem 3rem;
+    img {
+      background-size: 100% ;
+     // height:600px;
+      -webkit-clip-path: polygon(0 12%, 0 186%, 35% 50%);
+      clip-path: polygon(0 10%, 20% 300%, 100% 0%);
+      max-height: 100%;
+      max-width:100%;
+    }
+  }
+
+  .section__about-us-box--description
+  {
+    width:600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    font-size:.8rem;
+    line-height: 1.5;
+    letter-spacing: .1rem;
+
+    .section__about-us--description
+    {
+      padding:3rem;
+      border-radius: 100px 10px 100px 10px;
+      background-color: #24246e;
+    //  text-shadow: 1px 1px 15px black;
+      box-shadow: 1px 1px 15px #241379;
+    }
+  }
+}
+
+.overlay {
+  background: yellow;
+  color: black !important;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 100%;
+
+  clip-path: circle(100px at var(--x, 50%) var(--y, 50%));
+  transition: clip-path 100ms;
+}
+
+.section{
+  position: absolute;
+  min-height: 600px;
+  width:100%;
+}
+.teacher
+{
+  width:100%;
+}
+
+#lecture1{
+  min-height: 600px;
+  background: #24246e;
+}
+
+#lecture2{
+  min-height: 600px;
+  background: #24246e;
+}
+
+#lecture3{
+  min-height: 600px;
+  background: #24246e;
+}
+
+#page-content{
+  z-index:-1;
+  position: relative;
+}
+
+.pp-tableCell{
+  height:20% !important;
+  display:flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.liner {
+  background: rgb(36,36,110);
+  background: linear-gradient(96deg, rgba(36,36,110,1) 0%, rgba(219,215,86,1) 100%);
+  height:5px !important;
+  opacity: 1;
+}
+
+.section__lectures
+{
+  padding:5rem 0;
+  #pagepiling{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    height: -webkit-fill-available;
+    background: #24246e;
+  }
+
+  #section__slider-menu
+  {
+    list-style-type: none;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+
+    .active{
+      color:$primary-color-blue !important;
+      background:rgba(120, 120, 20, 0.2);
+      box-shadow: 1px 1px 15px $primary-color-blue;
+    }
+
+    li{
+      display:inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 1rem 2rem;
+      background:rgba(90, 120, 20, 0.5);
+      transition-duration: 300ms;
+      height:7rem;
+      padding:2rem 2rem !important;
+
+      a {
+        color: $primary-color-yellow;
+        font-size:1.5rem;
+        width:100%;
+        padding:2rem 2rem;
+        text-decoration: none;
+        transition-duration: 300ms;
+      }
+
+      &:hover{
+        transition-duration: 300ms;
+        background:rgba(120, 120, 20, 0.2);
+        transform: scale(1.15, 1.15);
+        box-shadow: 1px 1px 15px $primary-color-blue;
+      }
+    }
+  }
+}
+
+.section__teachers{
+  .blockquote{
+    font-size:1.5rem;
+    p{
+      color:$primary-color-blue;
+    }
+  }
+
+  .blockquote-footer {
+    font-size:1.25rem;
+    color:$primary-color-yellow;
+  }
+}
+
+.section__location{
+  .section__parallax
+  {
+    min-height: 500px;
+    width:100%;
+    background:url("./../images/valueadd_phpmeetup_location.png") no-repeat scroll right top #000000;
+    -o-background-size: 100%;
+    -moz-background-size: 100%;
+    -webkit-background-size:100%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .clock {
+    height: auto;
+    span {
+    font-size: 4rem;
+    }
+  }
+
+  .section__about-us-box--image{
+    img{
+      height:auto;
+    }
+  }
+
+  .section__about-us
+  {
+    padding-bottom: 2rem;
+  }
+  .section__lectures{
+    padding:0;
+  }
+  .section__teachers{
+    padding-top:5rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 600px) {
+  .clock {
+    height: auto;
+    span {
+      font-size: 5rem;
+    }
+  }
+
+  .section__about-us
+  {
+    padding-bottom: 2rem;
+  }
+  .section__lectures{
+    padding:0;
+  }
+  .section__teachers{
+    padding-top:5rem;
+  }
+}
+
+@media only screen and (max-width: 1024px){
+  .section{
+    padding:4rem 0;
+    p{
+      padding-top:3rem;
+      max-width:400px;
+      margin: 0 auto;
+    }
+  }
+
+}
+
